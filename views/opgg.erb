@@ -1,0 +1,19 @@
+<form action='/op_gg' method='GET'>
+    <div>
+        <select name="search_method">
+            <option value="self"> 승패만 보기    </option>
+            <option value="opgg"> op.gg에서 보기 </option>
+        </select>
+        <input type="text" name="character">
+        <input type="submit" value="검색">
+    </div>
+</form>
+
+<% if params[:character] %>
+<ul>
+    <li><%= params[:character] %> 님의 전적입니다.</li>
+    <li><%= @win %> 승 </li>
+    <li><%= @lose %> 패 </li>   
+</ul>
+<% end %>
+
